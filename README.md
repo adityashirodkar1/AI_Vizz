@@ -17,13 +17,13 @@ This project allows users to upload datasets and automatically generate visualiz
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/KaifSayyad/ADV_lab.git
+    git clone https://github.com/KaifSayyad/VizAI.git
     ```
 
 2.  **Navigate to the project directory:**
 
     ```bash
-    cd Project
+    cd VizAI
     ```
 
 3.  **Create a Python virtual environment (recommended):**
