@@ -1,68 +1,3 @@
-# import google.generativeai as genai
-# import pandas as pd
-# import seaborn as sns
-# import matplotlib.pyplot as plt
-# import streamlit as st
-
-# # Function to authenticate and get a response from Gemini API
-# def get_gemini_response(query: str, df: pd.DataFrame, api_key: str) -> str:
-#     """
-#     Function to get a response from Gemini API based on the natural language query
-#     and dataset.
-#     """
-#     genai.configure(api_key=api_key)
-#     df_info = df.info()  # Collecting dataset info (data types)
-#     df_sample = df.head().to_string(index=False)
-    
-#     # Updated prompt to ensure the response is in the correct format
-#     prompt = f"""
-# Given the following dataset:
-
-# Data types of columns:
-# {df_info}
-
-# Sample data (first 5 rows):
-# {df_sample}
-
-# Query: {query}
-
-# Please provide the following in this exact format, There should be no  mention of line description:
-
-# 1. **Visualization Type**: (e.g., scatter plot, bar chart, box plot, etc.)
-# 2. **Python Code**: Provide the Python code to generate the specified visualization using libraries like seaborn or matplotlib. The code should only include the code for the plot generation.
-# 3. **X Axis Label**: Provide the label for the x-axis of the plot. Do not include any code here, just the label text.
-# 4. **Y Axis Label**: Provide the label for the y-axis of the plot. Do not include any code here, just the label text.
-
-# Respond only with the required information in the specified format. Do not include any explanations or additional text outside of this format. No need to mention line description (eg Visualization Type) in the response.
-# """
-
-#     try:
-#         response = genai.GenerativeModel("gemini-1.5-flash").generate_content(prompt)
-#         return response.text.strip()
-#     except Exception as e:
-#         return f"Error while getting Gemini response: {str(e)}"
-
-
-# # Function to generate the chart based on the code provided by Gemini
-# def generate_chart(df: pd.DataFrame, chart_code: str, x_label: str, y_label: str):
-#     """
-#     Generates the chart using the provided code, and set the axis labels.
-#     """
-#     try:
-#         # Execute the code in the current namespace to generate the plot
-#         exec(chart_code, globals())
-
-#         # After executing the code, we manually label the axes
-#         plt.xlabel(x_label)
-#         plt.ylabel(y_label)
-
-#         # Show the plot in Streamlit
-#         st.pyplot(plt)
-
-#     except Exception as e:
-#         st.write("Error generating the chart:", e)
-
-
 import google.generativeai as genai
 import openai
 import pandas as pd
@@ -106,8 +41,8 @@ def get_gemini_response(query, df, api_key):
 
 
         # Send the request to Gemini
-        response = genai.GenerativeModel("gemini-1.5-flash").generate_content(prompt)
-
+        response = genai.GenerativeModel("gemini-pro").generate_content(prompt)
+        #   gemini-1.5-flash
         return response.text.strip()
     
     except Exception as e:

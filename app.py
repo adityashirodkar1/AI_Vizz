@@ -1,17 +1,19 @@
 import streamlit as st
 import pandas as pd
+import os
 from utils import generate_visualizations, get_gemini_response_multiple, parse_gemini_response_multiple, get_gemini_response, parse_gemini_response
 
 # Set up Google Gemini API key
-GENAI_API_KEY = "******************************"  # Replace with your actual Gemini API key
+GENAI_API_KEY = os.environ["GOOGLE_API_KEY"]  # Replace with your actual Gemini API key
 
 # Streamlit UI components
-st.set_page_config(page_title="VizAI - Data Visualization and Insights", layout="wide")
+st.set_page_config(page_title="AI-Vizz : Data Visualization and Insights", layout="wide")
 
 # Title
-st.title("Welcome to **VizAI**")
+# st.title("Welcome to **AI-Vizz**")
+st.title("AI-Vizz : Data Visualization and Insights")
 st.markdown("""
-    **VizAI** is a powerful web application that enables you to easily upload datasets and generate visualizations
+    **AI-Vizz** is a powerful web application that enables you to easily upload datasets and generate visualizations
     powered by AI. Simply upload your dataset, and let VizAI suggest the most insightful visualizations for your data.
     You can also ask natural language questions to gain deeper insights into the dataset.
 """)

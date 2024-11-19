@@ -1,4 +1,4 @@
-# VizAI
+# AI-Vizz
 
 **Introduction**
 
