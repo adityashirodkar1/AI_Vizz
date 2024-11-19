@@ -35,7 +35,10 @@ def get_gemini_response(query, df, api_key):
             2. Python code: Provide the Python code to generate the specified visualization using libraries like seaborn or matplotlib. The code should only include the code for the plot generation.
             3. X Axis Label: Provide the label for the x-axis of the plot. Do not include any code here, just the label text.
             4. Y Axis Label: Provide the label for the y-axis of the plot. Do not include any code here, just the label text.
-            For example response : 'Scatter Plot$import seaborn as sns\nimport matplotlib.pyplot as plt\nplt.figure(figsize=(10, 6))\nsns.scatterplot(x='column1', y='column2', data=df)$Age$bmi'
+            For example response : 'Scatter Plot$import seaborn as sns
+            import matplotlib.pyplot as plt
+            plt.figure(figsize=(10, 6))
+            sns.scatterplot(x='column1', y='column2', data=df)$Age$bmi'
             Respond with these 4 things seperated by a "$" symbol without any leading or trailing "$" symbols.
             """
 
@@ -124,7 +127,10 @@ def get_gemini_response_multiple(df: pd.DataFrame, api_key: str) -> str:
             Please generate 5 important visualizations for the dataset, separated by '&'. 
             Each output should be in the format:
             Visualization Type$Python Code$X Axis Label$Y Axis Label
-            Example Responce : 'Scatter Plot$import seaborn as sns\nimport matplotlib.pyplot as plt\nplt.figure(figsize=(10, 6))\nsns.scatterplot(x='column1', y='column2', data=df)$Age$bmi'&...
+            Example Responce : 'Scatter Plot$import seaborn as sns
+            import matplotlib.pyplot as plt
+            plt.figure(figsize=(10, 6))
+            sns.scatterplot(x='column1', y='column2', data=df)$Age$bmi'&...
             Respond with these 5 outputs, each separated by an '&' symbol. 
         """
 
