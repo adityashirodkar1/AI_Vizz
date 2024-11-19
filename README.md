@@ -5,7 +5,7 @@
 This project allows users to upload datasets and automatically generate visualizations through natural language queries. It uses the Google Gemini API and Streamlit for an interactive interface, enabling real-time insights and data exploration without requiring programming knowledge.
 
 **Demo**
-![](https://github.com/KaifSayyad/ADV_lab/blob/main/Project/demo/demo.gif)
+![](https://github.com/adityashirodkar1/AI_Vizz/blob/main/demo/demo.gif) 
 
 **Prerequisites**
 
